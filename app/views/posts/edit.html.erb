@@ -1,6 +1,8 @@
-<h1>投稿投稿</h1>
+<h1>編集フォーム</h1>
 <%= form_with model: @post, html:{class:"form-container"} do |form| %>
   <div class="form-input"><%= form.label :title %><%= form.text_field :title %></div>
   <div class="form-input"><%= form.label :content %><%= form.text_area :content %></div>
-  <div class="button-container"><%= form.submit "投稿" ,class:"link-button" %></div>
+  <div class="button-container"><%= form.submit "更新" ,class:"link-button" %></div>
 <% end %>
+<br>
+<div class="button-container"><%= link_to "戻る", posts_path,class:"link-button" %></div>
