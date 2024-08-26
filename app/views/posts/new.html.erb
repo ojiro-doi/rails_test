@@ -3,4 +3,7 @@
   <div class="form-input"><%= form.label :title %><%= form.text_field :title, autocomplete: "off"%></div>
   <div class="form-input"><%= form.label :content %><%= form.text_area :content %></div>
   <div class="button-container"><%= form.submit "投稿" ,class:"link-button" %></div>
+  <% @post.errors.full_messages_for(:title).each do |message| %>
+    <div><%= message %></div>
+  <% end%>
 <% end %>

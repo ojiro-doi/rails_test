@@ -14,7 +14,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      render :new
+      flash.now[:alert] = '新規登録に失敗しました'
+      render :new, status: :unprocessable_entity
     end
   end
 
